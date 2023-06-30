@@ -3,20 +3,22 @@
 ## Introduction
 This project focuses on building data pipelines to analyze ecommerce data efficiently. The main objectives of this project are to establish data pipelines on AWS, enabling the analysis of ecommerce data using various business analytics tools. These pipelines will cover both streaming and batch processing of the data. Python3 will be utilized in AWS Lambda functions for data processing.
 
-Dataset
+## Dataset
 The project utilizes ecommerce data from the UCI machine learning repository. The dataset comprises 8 columns and 541,909 rows in CSV format.
 
-Tools
-AWS API Gateway: Utilized for data ingestion (POST) and querying DynamoDB (GET).
-AWS Kinesis Data Streams: Used for buffering the incoming data.
-AWS Kinesis Firehose: Facilitates delivery of data to storage.
-AWS Lambda Functions: Written in Python3 to process the data.
-AWS Glue: Enables data catalog creation in the streaming process and ETL between S3 and Redshift in the batch process.
-Storage
-S3: Stores parquet data.
-Redshift: Stores data and connects to Tableau or Power BI.
-DynamoDB: Stores data with two tables (Customer & Invoice tables).
-Streaming Process
+## Tools
+1. AWS API Gateway: Utilized for data ingestion (POST) and querying DynamoDB (GET).
+2. AWS Kinesis Data Streams: Used for buffering the incoming data.
+3. AWS Kinesis Firehose: Facilitates delivery of data to storage.
+4. AWS Lambda Functions: Written in Python3 to process the data.
+5. AWS Glue: Enables data catalog creation in the streaming process and ETL between S3 and Redshift in the batch process.
+
+## Storage
+1. S3: Stores parquet data.
+2. Redshift: Stores data and connects to Tableau or Power BI.
+3. DynamoDB: Stores data with two tables (Customer & Invoice tables).
+
+## Streaming Process
 Constantly pulls raw CSV data into the data pipelines. Transformed data is stored in S3, Redshift, and DynamoDB. BI analytics tools like Tableau, Athena, and Jupyter notebook can connect to the data in storage. Customers can query transaction data in DynamoDB using the API and primary keys (InvoiceNO & StockCode).
 
 Sub-processes

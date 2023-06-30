@@ -1,6 +1,6 @@
 # EcomFlow: Building Efficient Ecommerce Data Pipelines for Streamlined Analysis
 
-Introduction
+## Introduction
 This project focuses on building data pipelines to analyze ecommerce data efficiently. The main objectives of this project are to establish data pipelines on AWS, enabling the analysis of ecommerce data using various business analytics tools. These pipelines will cover both streaming and batch processing of the data. Python3 will be utilized in AWS Lambda functions for data processing.
 
 Dataset

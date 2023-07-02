@@ -19,22 +19,25 @@ The project utilizes ecommerce data from the UCI machine learning repository. Th
 3. DynamoDB: Stores data with two tables (Customer & Invoice tables).
 
 ## Streaming Process
-Constantly pulls raw CSV data into the data pipelines. Transformed data is stored in S3, Redshift, and DynamoDB. BI analytics tools like Tableau, Athena, and Jupyter notebook can connect to the data in storage. Customers can query transaction data in DynamoDB using the API and primary keys (InvoiceNO & StockCode).
+1. Constantly pulls raw CSV data into the data pipelines. Transformed data is stored in S3, Redshift, and DynamoDB. 
+2. BI analytics tools like Power BI, Athena, and Jupyter notebook can connect to the data in storage.
+3. Customers can query transaction data in DynamoDB using the API and primary keys (InvoiceNO & StockCode).
 
-Sub-processes
-Data Ingestion: Ingests CSV data into AWS Kinesis through the API gateway.
-Data Cleaning: Cleans and performs necessary data type changes.
-Data Processing & Storage: Moves data from Kinesis to storage (S3 or Redshift) and processes it.
-BI Analytics: Establishes connections to BI tools like Tableau and Athena, and allows sending queries to DynamoDB.
-Batch Process
-Imports large volumes of raw data into the data pipelines. Transformed data is stored in S3 and Redshift. BI analytics tools like Power BI and Jupyter notebook can connect to the data in storage.
+## Sub-processes
+1. Data Ingestion: Ingests CSV data into AWS Kinesis through the API gateway.
+2. Data Cleaning: Cleans and performs necessary data type changes.
+3. Data Processing & Storage: Moves data from Kinesis to storage (S3 or Redshift) and processes it.
+4. BI Analytics: Establishes connections to BI tools like Tableau and Athena, and allows sending queries to DynamoDB.
 
-Sub-processes
-Data Ingestion to S3: Ingests data into the S3 bucket.
-Data Ingestion to Redshift: Ingests data into Redshift.
-BI Analytics: Establishes connections to BI tools like Power BI and Jupyter notebook.
-AWS Cognito
-AWS Cognito is utilized for secure access to the API gateway with authentication tokens in the streaming process.
+## Batch Process
+1. Imports large volumes of raw data into the data pipelines.
+2. Transformed data is stored in S3 and Redshift.
+3. BI analytics tools like Power BI and Jupyter notebook can connect to the data in storage.
+
+## Sub-processes
+1. Data Ingestion to S3: Ingests data into the S3 bucket.
+2. Data Ingestion to Redshift: Ingests data into Redshift.
+3. BI Analytics: Establishes connections to BI tools like Power BI and Jupyter notebook.
 
 Conclusion
 The established data pipelines enable efficient ETL processes and facilitate insightful data analysis. However, some improvements are needed, including implementing email notifications (AWS SNS) to monitor storage updates. Additionally, simplifying the setup of AWS Cognito for a larger number of users will be addressed in the future.
